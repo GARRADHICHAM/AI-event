@@ -27,7 +27,7 @@ export default function EventWebsite() {
               Innovation Showcase 2025
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-200">
-              Join us for an extraordinary event showcasing cutting-edge projects and innovative solutions. 
+              Join us for an extraordinary event showcasing cutting-edge projects and innovative solutions.
               Discover groundbreaking ideas from talented teams and connect with the future of technology.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -64,7 +64,7 @@ export default function EventWebsite() {
                 <img
                   src={project.poster}
                   alt={project.name}
-                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
               <div className="p-6">
@@ -90,7 +90,7 @@ export default function EventWebsite() {
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 z-50 overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-            <div 
+            <div
               className="fixed inset-0 bg-gray-900/75 backdrop-blur-sm transition-opacity"
               onClick={closeModal}
             ></div>
@@ -122,14 +122,6 @@ export default function EventWebsite() {
                   <p className="text-indigo-300 font-medium mb-4 text-lg">
                     {selectedProject.groupName}
                   </p>
-
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-2">Abstract</h4>
-                    <p className="text-gray-300 leading-relaxed">
-                      {selectedProject.abstract}
-                    </p>
-                  </div>
-
                   <div className="space-y-3">
                     <h4 className="text-lg font-semibold text-white flex items-center">
                       <Video className="h-5 w-5 mr-2" />
@@ -154,6 +146,15 @@ export default function EventWebsite() {
                       </a>
                     ))}
                   </div>
+
+                  <div className="mb-6 mt-8">
+                    <h4 className="text-lg font-semibold text-white mb-2">Abstract</h4>
+                    <p className="text-gray-300 leading-relaxed">
+                      {selectedProject.abstract}
+                    </p>
+                  </div>
+
+
                 </div>
               </div>
             </div>
