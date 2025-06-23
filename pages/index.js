@@ -325,7 +325,7 @@ export default function EventWebsite() {
                 <p className="text-white font-semibold">Hafsa Rouchdi</p>
                 <p className="text-white font-semibold">Garrad Hicham</p>
                 <p className="text-white font-semibold">Mohammed Mechdoud</p>
-                <p className="text-white font-semibold">Ouamaima Monsif</p>
+                <p className="text-white font-semibold">Oumaima Monsif</p>
                 <p className="text-white font-semibold">HAMMOUDI Salah-eddine</p>
                 <p className="text-white font-semibold">Douha Tissir</p>
 
