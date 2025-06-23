@@ -17,15 +17,13 @@ export default function EventWebsite() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br overflow-x-hidden from-indigo-900 via-purple-900 to-pink-800">
-      {/* Hero Section */}
-      {/* Hero Section */}
-      <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-
+   <div className="min-h-screen bg-gradient-to-br overflow-x-hidden from-indigo-900 via-purple-900 to-pink-800">
+  {/* Hero Section */}
+  <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    {/* Animated Background Elements */}
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="absolute top-0 left-1/4 w-96 max-w-full sm:w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-0 right-1/4 w-80 max-w-full sm:w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         {/* Top Header Bar */}
         <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-r from-black/40 via-transparent to-black/40 backdrop-blur-sm">
           <div className="flex items-center justify-between px-6 py-4">
@@ -128,11 +126,11 @@ export default function EventWebsite() {
       </div>
 
       {/* Projects Grid */}
-      <div id="projects" className="relative py-32 px-6 w-full  lg:px-8 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-purple-900/30"></div>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+    <div id="projects" className="relative py-32 px-2 sm:px-6 w-full lg:px-8 overflow-hidden">
+    {/* Background Elements */}
+    <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-purple-900/30"></div>
+    <div className="absolute top-20 left-10 w-72 max-w-full sm:w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <div className="absolute bottom-20 right-10 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
           {/* Enhanced Header */}
@@ -270,11 +268,11 @@ export default function EventWebsite() {
         </div>
       </div>
       {/* Footer */}
-      <footer className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 border-t border-white/10">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute top-0 left-1/3 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <footer className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 border-t border-white/10 overflow-x-hidden">
+    {/* Background Elements */}
+    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="absolute top-0 left-1/3 w-72 max-w-full sm:w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+    <div className="absolute bottom-0 right-1/3 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10 px-6 py-16 mx-auto max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
