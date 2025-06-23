@@ -17,16 +17,16 @@ export default function EventWebsite() {
   };
 
   return (
-   <div className="min-h-screen bg-gradient-to-br overflow-x-hidden from-indigo-900 via-purple-900 to-pink-800">
-  {/* Hero Section */}
-  <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-    {/* Animated Background Elements */}
-    <div className="absolute inset-0 bg-black/30"></div>
-    <div className="absolute top-0 left-1/4 w-96 max-w-full sm:w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute bottom-0 right-1/4 w-80 max-w-full sm:w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="min-h-screen bg-gradient-to-br overflow-x-hidden from-indigo-900 via-purple-900 to-pink-800">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute top-0 left-1/4 w-96 max-w-full sm:w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 max-w-full sm:w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         {/* Top Header Bar */}
         <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-r from-black/40 via-transparent to-black/40 backdrop-blur-sm">
-          <div className="flex items-center justify-between px-6 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between px-2 sm:px-6 py-4 gap-4">
             {/* Left Logo */}
             <div className="flex items-center">
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300">
@@ -38,8 +38,8 @@ export default function EventWebsite() {
               </div>
             </div>
 
-            {/* Supervisor Section - Enhanced */}
-            <div className="flex items-center space-x-4 ml-36 bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-lg rounded-2xl px-6 py-3 border border-white/25 shadow-2xl hover:from-white/20 hover:to-white/15 transition-all duration-300">
+            {/* Supervisor Section - Responsive */}
+            <div className="flex items-center space-x-4 flex-shrink-0 w-full sm:w-auto ml-0 sm:ml-12 lg:ml-36 bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-lg rounded-2xl px-4 sm:px-6 py-3 border border-white/25 shadow-2xl hover:from-white/20 hover:to-white/15 transition-all duration-300">
               <div className="relative">
                 <img
                   src="/prof.jpeg"
@@ -63,7 +63,7 @@ export default function EventWebsite() {
                   className="h-10 w-auto sm:h-12 filter drop-shadow-lg"
                 />
               </div>
-               <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300">
                 <img
                   src="/bibda.jpeg"
                   alt="FS Logo"
@@ -126,11 +126,11 @@ export default function EventWebsite() {
       </div>
 
       {/* Projects Grid */}
-    <div id="projects" className="relative py-32 px-2 sm:px-6 w-full lg:px-8 overflow-hidden">
-    {/* Background Elements */}
-    <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-purple-900/30"></div>
-    <div className="absolute top-20 left-10 w-72 max-w-full sm:w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-    <div className="absolute bottom-20 right-10 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div id="projects" className="relative py-32 px-2 sm:px-6 w-full lg:px-8 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-purple-900/30"></div>
+        <div className="absolute top-20 left-10 w-72 max-w-full sm:w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
           {/* Enhanced Header */}
@@ -269,10 +269,10 @@ export default function EventWebsite() {
       </div>
       {/* Footer */}
       <footer className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 border-t border-white/10 overflow-x-hidden">
-    {/* Background Elements */}
-    <div className="absolute inset-0 bg-black/30"></div>
-    <div className="absolute top-0 left-1/3 w-72 max-w-full sm:w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-    <div className="absolute bottom-0 right-1/3 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute top-0 left-1/3 w-72 max-w-full sm:w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/3 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10 px-6 py-16 mx-auto max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
@@ -290,7 +290,7 @@ export default function EventWebsite() {
                   <div>
                     <p className="text-gray-300 font-medium">Email</p>
                     <a href="mailto:contact@innovationshowcase.com" className="text-purple-300 hover:text-purple-200 transition-colors">
-                     bibda2025@innovationshowcase.space
+                      bibda2025@innovationshowcase.space
                     </a>
                   </div>
                 </div>
@@ -322,17 +322,17 @@ export default function EventWebsite() {
                 Organization Team
               </h3>
               <div className="space-y-4">
-                  <p className="text-white font-semibold">Hafsa Rouchdi</p>
-                  <p className="text-white font-semibold">Garrad Hicham</p>
-                  <p className="text-white font-semibold">Mohammed Mechdoud</p>
-                  <p className="text-white font-semibold">Ouamaima Monsif</p>
-                  <p className="text-white font-semibold">HAMMOUDI Salah-eddine</p>
-                  <p className="text-white font-semibold">Douha Tissir</p>
-                  
-                
+                <p className="text-white font-semibold">Hafsa Rouchdi</p>
+                <p className="text-white font-semibold">Garrad Hicham</p>
+                <p className="text-white font-semibold">Mohammed Mechdoud</p>
+                <p className="text-white font-semibold">Ouamaima Monsif</p>
+                <p className="text-white font-semibold">HAMMOUDI Salah-eddine</p>
+                <p className="text-white font-semibold">Douha Tissir</p>
 
-               
-                                
+
+
+
+
 
 
               </div>
