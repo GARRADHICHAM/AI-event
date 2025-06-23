@@ -33,7 +33,7 @@ export default function EventWebsite() {
             <div className="flex items-center">
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300">
                 <img
-                  src="/logo_UCD.png"
+                  src="/Picture1.png"
                   alt="UCD Logo"
                   className="h-10 w-auto sm:h-12 filter drop-shadow-lg"
                 />
@@ -41,26 +41,33 @@ export default function EventWebsite() {
             </div>
 
             {/* Supervisor Section - Enhanced */}
-            <div className="flex items-center space-x-4 bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-lg rounded-2xl px-6 py-3 border border-white/25 shadow-2xl hover:from-white/20 hover:to-white/15 transition-all duration-300">
+            <div className="flex items-center space-x-4 ml-36 bg-gradient-to-r from-white/15 to-white/10 backdrop-blur-lg rounded-2xl px-6 py-3 border border-white/25 shadow-2xl hover:from-white/20 hover:to-white/15 transition-all duration-300">
               <div className="relative">
                 <img
-                  src="/path-to-supervisor-photo.jpg"
+                  src="/prof.jpeg"
                   alt="Supervisor"
                   className="h-12 w-12 rounded-full object-cover border-3 border-white/40 shadow-xl"
                 />
                 <div className="absolute -bottom-1 -right-1 h-4 w-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
               </div>
               <div>
-                <p className="text-sm font-bold text-white tracking-wide">Dr. John Smith</p>
+                <p className="text-sm font-bold text-white tracking-wide">Dr. Aaroud Abdessadek</p>
                 <p className="text-xs text-purple-200 font-medium">Event Supervisor</p>
               </div>
             </div>
 
             {/* Right Logo */}
-            <div className="flex items-center">
+            <div className="flex space-x-2 items-center">
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300">
                 <img
-                  src="/logo_FS.png"
+                  src="/023.png"
+                  alt="FS Logo"
+                  className="h-10 w-auto sm:h-12 filter drop-shadow-lg"
+                />
+              </div>
+               <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl hover:bg-white/20 transition-all duration-300">
+                <img
+                  src="/bibda.jpeg"
                   alt="FS Logo"
                   className="h-10 w-auto sm:h-12 filter drop-shadow-lg"
                 />
@@ -271,7 +278,7 @@ export default function EventWebsite() {
 
         <div className="relative z-10 px-6 py-16 mx-auto max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            
+
             {/* Contact Us Section */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200">
@@ -285,7 +292,7 @@ export default function EventWebsite() {
                   <div>
                     <p className="text-gray-300 font-medium">Email</p>
                     <a href="mailto:contact@innovationshowcase.com" className="text-purple-300 hover:text-purple-200 transition-colors">
-                      contact@innovationshowcase.com
+                     bibda2025@innovationshowcase.space
                     </a>
                   </div>
                 </div>
@@ -295,7 +302,7 @@ export default function EventWebsite() {
                   </svg>
                   <div>
                     <p className="text-gray-300 font-medium">Phone</p>
-                    <p className="text-purple-300">+1 (555) 123-4567</p>
+                    <p className="text-purple-300">+212 6 91 56 86 69</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -305,7 +312,7 @@ export default function EventWebsite() {
                   </svg>
                   <div>
                     <p className="text-gray-300 font-medium">Location</p>
-                    <p className="text-purple-300">University College Dublin</p>
+                    <p className="text-purple-300">Faculty of Sciences El Jadida</p>
                   </div>
                 </div>
               </div>
@@ -317,19 +324,17 @@ export default function EventWebsite() {
                 Organization Team
               </h3>
               <div className="space-y-4">
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-purple-400/30 transition-all duration-300">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">Mohammed Mechdoud</p>
-                      
-                    </div>
-                  </div>
-                </div>
+                  <p className="text-white font-semibold">Hafsa Rouchdi</p>
+                  <p className="text-white font-semibold">Garrad Hicham</p>
+                  <p className="text-white font-semibold">Mohammed Mechdoud</p>
+                  <p className="text-white font-semibold">Ouamaima Monsif</p>
+                  <p className="text-white font-semibold">HAMMOUDI Salah-eddine</p>
+                  <p className="text-white font-semibold">Douha Tissir</p>
+                  
+                
+
+               
+                                
 
 
               </div>
@@ -349,7 +354,7 @@ export default function EventWebsite() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2">Hicham Garrad</h4>
-               
+
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-center space-x-2">

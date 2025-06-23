@@ -86,7 +86,7 @@ export const projectData = [
     "id": 9,
     "name": "Development of an Intelligent Fitness Chatbot",
     "groupName": "HAMMOUDI Salah-eddine",
-    "poster": "/posters/Mohamed_Mechdoud.jpeg",
+    "poster": "/posters/salah.jpeg",
     "abstract": "This project presents the design of an intelligent fitness chatbot powered by deep learning and natural language processing. The chatbot delivers personalized workout recommendations based on user inputs such as fitness goals, experience level, and physical constraints. It integrates a Convolutional Neural Network (CNN) for classifying exercises, the Cohere API for response generation, and Streamlit for a user-friendly interface. Data preprocessing is performed with spaCy, and local images are incorporated for visual guidance. The system effectively understands user queries, classifies exercises, and provides relevant feedback. Despite challenges like limited datasets and response variability, the results demonstrate a promising foundation for building smart, personalized fitness assistants, with potential for future improvements in natural language understanding and dynamic planning.",
     "meetingLinks": [
       {
@@ -113,7 +113,7 @@ export const projectData = [
     "id": 13,
     "name": "AI-Powered Pneumonia Detection: A Deep Learning Approach Combining Convolutional Neural Networks, and Automated Reporting for Accurate Chest X-Ray Analysis",
     "groupName": "MEZZINE MOHAMED, ALAOUI BRAHIM",
-    "poster": "/posters/Mezzine_Mohamed.jpeg",
+    "poster": "/posters/mezzine.jpeg",
     "abstract": "Pneumonia remains a leading cause of mortality worldwide, particularly in resource-limited settings where access to expert radiological interpretation is scarce. While chest X-rays (CXRs) serve as the primary diagnostic tool, their manual interpretation suffers from inter-observer variability and diagnostic delays, necessitating automated solutions. This study presents a deep learning system for automated pneumonia detection from chest X-rays. We developed a custom Convolutional Neural Network (CNN) architecture trained on 5,863 chest X-ray images from the NIH Chest X-ray Dataset, incorporating batch normalization, dropout regularization, and data augmentation techniques to enhance generalization. To improve model interpretability, we integrated Gradient-weighted Class Activation Mapping (Grad-CAM) for visual explanations and implemented an automated report generation system. The proposed model achieved 87.8% accuracy, 89.9% precision, 86.1% recall, and 94.9% specificity on the test set, with Grad-CAM visualizations successfully highlighting clinically relevant regions as validated by radiologist Dr. Amina Alaoui. The system was deployed as a web-based application using Flask, enabling real time diagnosis. This work demonstrates the successful integration of deep learning techniques for pneumonia detection, offering an efficient and clinically viable solution that enhances diagnostic capabilities in resource-constrained environments.",
     "meetingLinks": [
       {
