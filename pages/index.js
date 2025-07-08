@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X, Calendar, Video } from 'lucide-react';
 import { projectData } from '../data/projects';
+import { categoryLinks } from '../data/links';
 
 export default function EventWebsite() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -14,6 +15,9 @@ export default function EventWebsite() {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
+  };
+  const getCategoryLinks = (category) => {
+    return categoryLinks.find(link => link.category === category) || {};
   };
 
   const ProjectCard = ({ project, index, openModal }) => (
@@ -76,7 +80,7 @@ export default function EventWebsite() {
           {/* Meeting Links Indicator */}
           <div className="flex items-center space-x-2">
             <div className="flex space-x-1">
-              {project.meetingLinks.map((_, linkIndex) => (
+              {/* {project.meetingLinks.map((_, linkIndex) => (
                 <div
                   key={linkIndex}
                   className="w-2.5 h-2.5 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse"
@@ -84,10 +88,10 @@ export default function EventWebsite() {
                     animationDelay: `${linkIndex * 200}ms`
                   }}
                 ></div>
-              ))}
+              ))} */}
             </div>
             <span className="text-xs text-purple-300 font-semibold">
-              {project.meetingLinks.length} Meeting{project.meetingLinks.length > 1 ? 's' : ''}
+              {/* {project.meetingLinks.length} Meeting{project.meetingLinks.length > 1 ? 's' : ''} */}
             </span>
           </div>
         </div>
@@ -391,7 +395,7 @@ export default function EventWebsite() {
             </div>
 
             {/* Agriculture Category */}
-           <div id="category-agriculture" className="category-section">
+            <div id="category-agriculture" className="category-section">
               <div className="flex items-center mb-8">
                 <div className="flex items-center space-x-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-green-400/30 shadow-2xl">
                   <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
@@ -650,7 +654,7 @@ export default function EventWebsite() {
                     <img
                       src={selectedProject.poster}
                       alt={selectedProject.name}
-                      className="w-full h-64  object-cover rounded-lg"
+                      className="w-full h-64 object-cover rounded-lg"
                     />
                   </div>
 
@@ -665,24 +669,45 @@ export default function EventWebsite() {
                       <Video className="h-5 w-5 mr-2" />
                       Meeting Sessions
                     </h4>
-                    {selectedProject.meetingLinks.map((meeting, index) => (
-                      <a
-                        key={index}
-                        href={meeting.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 group"
-                      >
-                        <div className="flex items-center">
-                          <Calendar className="h-5 w-5 text-white mr-3" />
-                          <span className="text-white font-medium">{meeting.title}</span>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-white text-sm">{meeting.time}</div>
-                          <div className="text-indigo-200 text-xs">{meeting.date}</div>
-                        </div>
-                      </a>
-                    ))}
+                    {(() => {
+                      const links = getCategoryLinks(selectedProject.category);
+                      return (
+                        <>
+                          {links.link1 && (
+                            <a
+                              href={links.link1}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 group mb-2"
+                            >
+                              <div className="flex items-center">
+                                <Calendar className="h-5 w-5 text-white mr-3" />
+                                <span className="text-white font-medium">Primary Meeting</span>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-white text-sm">Join</div>
+                              </div>
+                            </a>
+                          )}
+                          {links.link2 && (
+                            <a
+                              href={links.link2}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-between p-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 group"
+                            >
+                              <div className="flex items-center">
+                                <Calendar className="h-5 w-5 text-white mr-3" />
+                                <span className="text-white font-medium">Secondary Meeting</span>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-white text-sm">Join</div>
+                              </div>
+                            </a>
+                          )}
+                        </>
+                      );
+                    })()}
                   </div>
 
                   <div className="mb-6 mt-8">
@@ -691,8 +716,6 @@ export default function EventWebsite() {
                       {selectedProject.abstract}
                     </p>
                   </div>
-
-
                 </div>
               </div>
             </div>
