@@ -1,20 +1,11 @@
 // data/projects.js
 export const projectData = [
   {
-    "id": 3,
-    "name": "Semi-Automatic Annotation of Mammographic Images Using AI for Enhanced Breast Cancer Detection",
-    "groupName": "GARRAD HICHAM",
-    "poster": "/posters/hicham_garrad_poster.png",
-    "abstract": "Accurate and comprehensive annotation of mammographic images is paramount for the development of robust and reliable artificial intelligence (AI) models aimed at improving breast cancer detection. However, the manual annotation of these complex medical  images presents a significant bottleneck, characterized by its laborious nature, the substantial time investment required from expert radiologists, and the inherent risk of inter-observer variability and errors. This study introduces a novel and efficient semi-automatic annotation framework that leverages the strengths of both AI and human expertise to accelerate the labeling process while ensuring  high annotation quality. Our methodology employs a two-stage approach: Initially, a convolutional neural network (CNN), pre trained on a large dataset and fine-tuned on a small subset of manually annotated mammograms of Moroccan women, generates preliminary, pixel-level segmentation masks for unlabeled images. Subsequently, these AI-generated segmentations are reviewed, validated, and refined by experienced radiologists through a user-friendly interface, allowing for rapid correction of any inaccuracies. The resulting refined annotations are then fed back into the CNN for continuous training and improvement in performance, creating an active learning loop that iteratively reduces the need for manual intervention. Experimental results demonstrate that this semi automatic framework achieves a substantial reduction in annotation time, while also yielding superior annotation consistency and improved boundary delineation, leading to a higher quality of labeled data. This approach not only provides an immediate solution for the scarcity of annotated mammographic images but also offers a scalable and efficient solution for accelerating the development and implementation of AI-driven diagnostic tools, paving the way for broader access to enhanced breast cancer screening. ",
-
-    "category": "Healthcare"
-  },
-  {
-    "id": 13,
-    "name": "AI-Powered Pneumonia Detection: A Deep Learning Approach Combining Convolutional Neural Networks, and Automated Reporting for Accurate Chest X-Ray Analysis",
-    "groupName": "MEZZINE MOHAMED, ALAOUI BRAHIM",
-    "poster": "/posters/mezzine.jpeg",
-    "abstract": "Pneumonia remains a leading cause of mortality worldwide, particularly in resource-limited settings where access to expert radiological interpretation is scarce. While chest X-rays (CXRs) serve as the primary diagnostic tool, their manual interpretation suffers from inter-observer variability and diagnostic delays, necessitating automated solutions. This study presents a deep learning system for automated pneumonia detection from chest X-rays. We developed a custom Convolutional Neural Network (CNN) architecture trained on 5,863 chest X-ray images from the NIH Chest X-ray Dataset, incorporating batch normalization, dropout regularization, and data augmentation techniques to enhance generalization. To improve model interpretability, we integrated Gradient-weighted Class Activation Mapping (Grad-CAM) for visual explanations and implemented an automated report generation system. The proposed model achieved 87.8% accuracy, 89.9% precision, 86.1% recall, and 94.9% specificity on the test set, with Grad-CAM visualizations successfully highlighting clinically relevant regions as validated by radiologist Dr. Amina Alaoui. The system was deployed as a web-based application using Flask, enabling real time diagnosis. This work demonstrates the successful integration of deep learning techniques for pneumonia detection, offering an efficient and clinically viable solution that enhances diagnostic capabilities in resource-constrained environments.",
+    "id": 1,
+    "name": "Medical Chatbot",
+    "groupName": "SADIK Oussama, MOHIDIN Mohamed",
+    "poster": "/posters/Sadik_Mohidin.jpg",
+    "abstract": "In this project, we developed an intelligent medical chatbot based on artificial intelligence technologies, capable of assisting users in the healthcare domain. This interactive system is designed to answer a wide range of medical questions, provide reliable information on diseases, symptoms, treatments, and best health practices. In addition to natural language understanding, our chatbot integrates advanced modules for the processing of medical documents (such as clinical reports and prescriptions) as well as the analysis of medical images (such as X-rays, MRIs, etc.), enabling more comprehensive and contextual assistance. This project aims to facilitate access to medical information, support healthcare professionals, and improve patient awareness through an intelligent, accessible, and interactive tool.",
 
     "category": "Healthcare"
   },
@@ -28,19 +19,11 @@ export const projectData = [
     "category": "Healthcare"
   },
   {
-    "id": 4,
-    "name": "Automated Detection and Segmentation of Brain Lesions in MRI Images Using Deep Learning Models",
-    "groupName": "El AOUNI Hajar, IFADADEN Abed-el Hak",
-    "poster": "/posters/El Aouni_Ifadaden.jpg",
-    "abstract": "This study introduces an innovative dual-model deep learning framework for the automated detection and segmentation of brain lesions in MRI images, aiming to address key challenges in medical imaging through the integration of artificial intelligence and advanced computational methods. The proposed system employs a Convolutional Neural Network (CNN) based on the VGG architecture for lesion detection and classification, achieving an accuracy of 96%, with precision and recall scores of 95% and 94%, respectively. For segmentation, a UNet-ResNeXt50 model using a hybrid loss function (combining Dice Loss and Binary Cross-Entropy) delivers precise delineation of lesion boundaries, with a Dice Coefficient of 0.92 and an Intersection over Union (IoU) score of 0.88. Trained on a large dataset—over 10,000 MRI images for detection and annotated scans from more than 100 patients for segmentation—the framework demonstrates strong robustness and generalization across diverse clinical scenarios. The integration of data augmentation techniques and the hybrid loss function allows the model to effectively manage data variability and class imbalance, making it well-suited for embedded computing applications in resource-constrained medical environments.",
-    "category": "Healthcare"
-  },
-  {
-    "id": 1,
-    "name": "Medical Chatbot",
-    "groupName": "SADIK Oussama, MOHIDIN Mohamed",
-    "poster": "/posters/Sadik_Mohidin.jpg",
-    "abstract": "In this project, we developed an intelligent medical chatbot based on artificial intelligence technologies, capable of assisting users in the healthcare domain. This interactive system is designed to answer a wide range of medical questions, provide reliable information on diseases, symptoms, treatments, and best health practices. In addition to natural language understanding, our chatbot integrates advanced modules for the processing of medical documents (such as clinical reports and prescriptions) as well as the analysis of medical images (such as X-rays, MRIs, etc.), enabling more comprehensive and contextual assistance. This project aims to facilitate access to medical information, support healthcare professionals, and improve patient awareness through an intelligent, accessible, and interactive tool.",
+    "id": 3,
+    "name": "Semi-Automatic Annotation of Mammographic Images Using AI for Enhanced Breast Cancer Detection",
+    "groupName": "GARRAD HICHAM",
+    "poster": "/posters/hicham_garrad_poster.png",
+    "abstract": "Accurate and comprehensive annotation of mammographic images is paramount for the development of robust and reliable artificial intelligence (AI) models aimed at improving breast cancer detection. However, the manual annotation of these complex medical  images presents a significant bottleneck, characterized by its laborious nature, the substantial time investment required from expert radiologists, and the inherent risk of inter-observer variability and errors. This study introduces a novel and efficient semi-automatic annotation framework that leverages the strengths of both AI and human expertise to accelerate the labeling process while ensuring  high annotation quality. Our methodology employs a two-stage approach: Initially, a convolutional neural network (CNN), pre trained on a large dataset and fine-tuned on a small subset of manually annotated mammograms of Moroccan women, generates preliminary, pixel-level segmentation masks for unlabeled images. Subsequently, these AI-generated segmentations are reviewed, validated, and refined by experienced radiologists through a user-friendly interface, allowing for rapid correction of any inaccuracies. The resulting refined annotations are then fed back into the CNN for continuous training and improvement in performance, creating an active learning loop that iteratively reduces the need for manual intervention. Experimental results demonstrate that this semi automatic framework achieves a substantial reduction in annotation time, while also yielding superior annotation consistency and improved boundary delineation, leading to a higher quality of labeled data. This approach not only provides an immediate solution for the scarcity of annotated mammographic images but also offers a scalable and efficient solution for accelerating the development and implementation of AI-driven diagnostic tools, paving the way for broader access to enhanced breast cancer screening. ",
 
     "category": "Healthcare"
   },
@@ -54,6 +37,27 @@ export const projectData = [
     "category": "Healthcare"
   },
   {
+    "id": 13,
+    "name": "AI-Powered Pneumonia Detection: A Deep Learning Approach Combining Convolutional Neural Networks, and Automated Reporting for Accurate Chest X-Ray Analysis",
+    "groupName": "MEZZINE MOHAMED, ALAOUI BRAHIM",
+    "poster": "/posters/mezzine.jpeg",
+    "abstract": "Pneumonia remains a leading cause of mortality worldwide, particularly in resource-limited settings where access to expert radiological interpretation is scarce. While chest X-rays (CXRs) serve as the primary diagnostic tool, their manual interpretation suffers from inter-observer variability and diagnostic delays, necessitating automated solutions. This study presents a deep learning system for automated pneumonia detection from chest X-rays. We developed a custom Convolutional Neural Network (CNN) architecture trained on 5,863 chest X-ray images from the NIH Chest X-ray Dataset, incorporating batch normalization, dropout regularization, and data augmentation techniques to enhance generalization. To improve model interpretability, we integrated Gradient-weighted Class Activation Mapping (Grad-CAM) for visual explanations and implemented an automated report generation system. The proposed model achieved 87.8% accuracy, 89.9% precision, 86.1% recall, and 94.9% specificity on the test set, with Grad-CAM visualizations successfully highlighting clinically relevant regions as validated by radiologist Dr. Amina Alaoui. The system was deployed as a web-based application using Flask, enabling real time diagnosis. This work demonstrates the successful integration of deep learning techniques for pneumonia detection, offering an efficient and clinically viable solution that enhances diagnostic capabilities in resource-constrained environments.",
+
+    "category": "Healthcare"
+  },
+  
+  {
+    "id": 4,
+    "name": "Automated Detection and Segmentation of Brain Lesions in MRI Images Using Deep Learning Models",
+    "groupName": "El AOUNI Hajar, IFADADEN Abed-el Hak",
+    "poster": "/posters/El Aouni_Ifadaden.jpg",
+    "abstract": "This study introduces an innovative dual-model deep learning framework for the automated detection and segmentation of brain lesions in MRI images, aiming to address key challenges in medical imaging through the integration of artificial intelligence and advanced computational methods. The proposed system employs a Convolutional Neural Network (CNN) based on the VGG architecture for lesion detection and classification, achieving an accuracy of 96%, with precision and recall scores of 95% and 94%, respectively. For segmentation, a UNet-ResNeXt50 model using a hybrid loss function (combining Dice Loss and Binary Cross-Entropy) delivers precise delineation of lesion boundaries, with a Dice Coefficient of 0.92 and an Intersection over Union (IoU) score of 0.88. Trained on a large dataset—over 10,000 MRI images for detection and annotated scans from more than 100 patients for segmentation—the framework demonstrates strong robustness and generalization across diverse clinical scenarios. The integration of data augmentation techniques and the hybrid loss function allows the model to effectively manage data variability and class imbalance, making it well-suited for embedded computing applications in resource-constrained medical environments.",
+    "category": "Healthcare"
+  },
+
+
+
+  {
     "id": 3,
     "name": "Intelligent Student Profiling System Using XGBoost and NLP",
     "groupName": "MECHDOUD Mohammed",
@@ -62,6 +66,7 @@ export const projectData = [
 
     "category": "Education"
   },
+
   {
     "id": 5,
     "name": "Intelligent Academic Guidance Chatbot Based on AI, and Educational Data",
@@ -79,6 +84,8 @@ export const projectData = [
     "abstract": "This project presents the development of an intelligent chatbot named OrienBot, designed to enhance the academic guidance experience for students, particularly those intending to join the University of Berkeley. OrienBot is capable of responding interactively and accurately to a wide range of academic queries, from course descriptions and available programs to information about professors and curricula. By leveraging the pre-trained saifalh/frenchOrientationModel model and an intuitive user interface powered by Streamlit, this project aims to revolutionize how students interact with institutional resources. Using a specific dataset, the chatbot is customized to provide relevant and contextual responses. Tests show that the tool achieves high accuracy and user satisfaction due to its speed and adaptability. The results demonstrate OrienBot's effectiveness as an academic assistance tool, with promising prospects for future enhancements such as voice recognition and multilingual integration.",
     "category": "Education"
   },
+
+
   {
     "id": 14,
     "name": "Optimized MobileNet Model for Early Detection of Tomato Diseases",
@@ -98,6 +105,8 @@ export const projectData = [
     "category": "Cryptography"
   },
 
+
+  
   {
     "id": 9,
     "name": "Development of an Intelligent Fitness Chatbot",
@@ -107,12 +116,6 @@ export const projectData = [
 
     "category": "Sports & Fitness"
   },
-
-
-
-
-
-
 
 
   {

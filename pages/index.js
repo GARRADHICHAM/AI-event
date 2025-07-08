@@ -261,7 +261,7 @@ export default function EventWebsite() {
                 </div>
                 <h3 className="text-xl font-bold text-white">Healthcare</h3>
                 <div className="bg-red-500/20 rounded-full px-4 py-1 border border-red-400/30">
-                  <span className="text-red-200 font-semibold text-sm">10:00 - 10:50</span>
+                  <span className="text-red-200 font-semibold text-sm">10:00 - 11:00 AM</span>
                 </div>
               </div>
               {/* Education */}
@@ -276,7 +276,7 @@ export default function EventWebsite() {
                 </div>
                 <h3 className="text-xl font-bold text-white">Education</h3>
                 <div className="bg-blue-500/20 rounded-full px-4 py-1 border border-blue-400/30">
-                  <span className="text-blue-200 font-semibold text-sm">10:50 - 11:10</span>
+                  <span className="text-blue-200 font-semibold text-sm">11:00 - 11:30 AM</span>
                 </div>
               </div>
               {/* Agriculture */}
@@ -291,7 +291,7 @@ export default function EventWebsite() {
                 </div>
                 <h3 className="text-xl font-bold text-white">Agriculture</h3>
                 <div className="bg-green-500/20 rounded-full px-4 py-1 border border-green-400/30">
-                  <span className="text-green-200 font-semibold text-sm">11:10 - 11:20</span>
+                  <span className="text-green-200 font-semibold text-sm">11:30 - 11:40 AM</span>
                 </div>
               </div>
               {/* Cryptography */}
@@ -306,7 +306,7 @@ export default function EventWebsite() {
                 </div>
                 <h3 className="text-xl font-bold text-white">Cryptography</h3>
                 <div className="bg-yellow-500/20 rounded-full px-4 py-1 border border-yellow-400/30">
-                  <span className="text-yellow-200 font-semibold text-sm">11:20 - 11:30</span>
+                  <span className="text-yellow-200 font-semibold text-sm">11:40 - 11:50 AM</span>
                 </div>
               </div>
               {/* Sports & Fitness */}
@@ -321,7 +321,7 @@ export default function EventWebsite() {
                 </div>
                 <h3 className="text-xl font-bold text-white">Sports & Fitness</h3>
                 <div className="bg-purple-500/20 rounded-full px-4 py-1 border border-purple-400/30">
-                  <span className="text-purple-200 font-semibold text-sm">11:30 - 11:50</span>
+                  <span className="text-purple-200 font-semibold text-sm">11:50 - 12:10 AM</span>
                 </div>
               </div>
               {/* AI for Recruitment */}
@@ -336,7 +336,7 @@ export default function EventWebsite() {
                 </div>
                 <h3 className="text-xl font-bold text-white">AI for Recruitment</h3>
                 <div className="bg-teal-500/20 rounded-full px-4 py-1 border border-teal-400/30">
-                  <span className="text-teal-200 font-semibold text-sm">11:50 - 12:10</span>
+                  <span className="text-teal-200 font-semibold text-sm">12:10 - 12:30 PM</span>
                 </div>
               </div>
             </div>
