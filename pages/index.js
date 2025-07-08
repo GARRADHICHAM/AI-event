@@ -16,6 +16,88 @@ export default function EventWebsite() {
     setSelectedProject(null);
   };
 
+  const ProjectCard = ({ project, index, openModal }) => (
+    <div
+      className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-lg border border-white/20 hover:border-purple-400/50 transition-all duration-500 cursor-pointer transform hover:scale-[1.02] hover:-translate-y-2 shadow-2xl hover:shadow-purple-500/20"
+      onClick={() => openModal(project)}
+      style={{
+        animationDelay: `${index * 100}ms`
+      }}
+    >
+      {/* Live Indicator */}
+      <div className="absolute top-4 right-4 z-20 flex items-center space-x-2 bg-green-500/90 backdrop-blur-sm rounded-full px-3 py-1 border border-green-400/50">
+        <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
+        <span className="text-xs font-bold text-white">LIVE</span>
+      </div>
+
+      {/* Image Container */}
+      <div className="relative aspect-w-16 aspect-h-10 overflow-hidden rounded-t-3xl">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+        <img
+          src={project.poster}
+          alt={project.name}
+          className="h-[300px] w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+        />
+
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end justify-center pb-8">
+          <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 border border-white/30">
+            <span className="text-white font-semibold text-sm">Click to Join Meeting</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <div className="mb-4">
+          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300">
+            {project.name}
+          </h3>
+          <div className="flex items-center space-x-2 mb-4">
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <p className="text-purple-300 font-semibold text-base">{project.groupName}</p>
+          </div>
+        </div>
+
+        {/* Interactive Footer */}
+        <div className="flex items-center justify-between pt-4 border-t border-white/10">
+          <div className="flex items-center space-x-2">
+            <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            <span className="text-sm text-gray-300 font-medium">View Details</span>
+          </div>
+
+          {/* Meeting Links Indicator */}
+          <div className="flex items-center space-x-2">
+            <div className="flex space-x-1">
+              {project.meetingLinks.map((_, linkIndex) => (
+                <div
+                  key={linkIndex}
+                  className="w-2.5 h-2.5 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse"
+                  style={{
+                    animationDelay: `${linkIndex * 200}ms`
+                  }}
+                ></div>
+              ))}
+            </div>
+            <span className="text-xs text-purple-300 font-semibold">
+              {project.meetingLinks.length} Meeting{project.meetingLinks.length > 1 ? 's' : ''}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Glow Effect */}
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/10 group-hover:via-transparent group-hover:to-blue-500/10 transition-all duration-500 pointer-events-none"></div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br overflow-x-hidden from-indigo-900 via-purple-900 to-pink-800">
       {/* Hero Section */}
@@ -79,7 +161,7 @@ export default function EventWebsite() {
             {/* Event Badge */}
             <div className="inline-flex items-center px-4 py-2 mb-8 bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-sm rounded-full border border-purple-400/30 shadow-xl">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
-              <span className="text-sm font-semibold text-purple-200 tracking-wide">LIVE EVENT • JUNE 26, 2025</span>
+              <span className="text-sm font-semibold text-purple-200 tracking-wide">LIVE EVENT • July 9, 2025</span>
             </div>
 
             <h1 className="text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-blue-200 sm:text-7xl mb-6 drop-shadow-2xl">
@@ -126,6 +208,7 @@ export default function EventWebsite() {
       </div>
 
       {/* Projects Grid */}
+      {/* Projects Grid - Categorized by Schedule */}
       <div id="projects" className="relative py-32 px-2 sm:px-6 w-full lg:px-8 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-purple-900/30"></div>
@@ -133,28 +216,19 @@ export default function EventWebsite() {
         <div className="absolute bottom-20 right-10 w-80 max-w-full sm:w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative z-10">
-          {/* Enhanced Header */}
-          <div className="mx-auto max-w-4xl text-center mb-20">
-            {/* Section Badge */}
+
+          {/* <div className="mx-auto max-w-4xl text-center mb-20">
+
             <div className="inline-flex items-center px-6 py-3 mb-8 bg-gradient-to-r from-purple-500/20 to-blue-500/20 backdrop-blur-lg rounded-full border border-purple-400/30 shadow-2xl">
               <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3 animate-pulse"></div>
               <span className="text-sm font-bold text-purple-200 tracking-widest uppercase">Live Projects Showcase</span>
             </div>
 
-            <h2 className="text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-blue-200 sm:text-6xl mb-8">
-              Featured Projects
-            </h2>
+
 
             <div className="space-y-4 max-w-3xl mx-auto">
-              <p className="text-xl text-gray-200 font-medium leading-relaxed">
-                Discover innovative solutions from our talented participants
-              </p>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-xl rounded-lg"></div>
-                <p className="relative text-lg text-white bg-gradient-to-r from-black/60 to-black/40 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 shadow-xl font-semibold">
-                  Join us now to discover more about the projects that interest you
-                </p>
-              </div>
+
+
               <p className="text-lg text-purple-200 font-medium">
                 <span className="inline-flex items-center">
                   <svg className="w-5 h-5 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
@@ -164,92 +238,249 @@ export default function EventWebsite() {
                 </span>
               </p>
             </div>
+          </div> */}
+
+          <div className="mx-auto max-w-4xl text-center mb-20">
+            <h2 className="text-4xl flex-col font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-blue-200 sm:text-5xl mb-8">
+              Event Plan
+            </h2>
+            <div className="flex-col space-y-2  justify-center gap-4 mb-8">
+              {/* Healthcare */}
+              <div
+                className="flex items-center space-x-4 bg-gradient-to-r from-red-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-red-400/30 shadow-2xl cursor-pointer hover:scale-105 transition"
+                onClick={() => document.getElementById('category-healthcare').scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15.586 13H14a1 1 0 01-1-1z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Healthcare</h3>
+                <div className="bg-red-500/20 rounded-full px-4 py-1 border border-red-400/30">
+                  <span className="text-red-200 font-semibold text-sm">10:00 - 10:50</span>
+                </div>
+              </div>
+              {/* Education */}
+              <div
+                className="flex items-center space-x-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-blue-400/30 shadow-2xl cursor-pointer hover:scale-105 transition"
+                onClick={() => document.getElementById('category-education').scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Education</h3>
+                <div className="bg-blue-500/20 rounded-full px-4 py-1 border border-blue-400/30">
+                  <span className="text-blue-200 font-semibold text-sm">10:50 - 11:10</span>
+                </div>
+              </div>
+              {/* Agriculture */}
+              <div
+                className="flex items-center space-x-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-green-400/30 shadow-2xl cursor-pointer hover:scale-105 transition"
+                onClick={() => document.getElementById('category-agriculture').scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Agriculture</h3>
+                <div className="bg-green-500/20 rounded-full px-4 py-1 border border-green-400/30">
+                  <span className="text-green-200 font-semibold text-sm">11:10 - 11:20</span>
+                </div>
+              </div>
+              {/* Cryptography */}
+              <div
+                className="flex items-center space-x-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-yellow-400/30 shadow-2xl cursor-pointer hover:scale-105 transition"
+                onClick={() => document.getElementById('category-cryptography').scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Cryptography</h3>
+                <div className="bg-yellow-500/20 rounded-full px-4 py-1 border border-yellow-400/30">
+                  <span className="text-yellow-200 font-semibold text-sm">11:20 - 11:30</span>
+                </div>
+              </div>
+              {/* Sports & Fitness */}
+              <div
+                className="flex items-center space-x-4 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-purple-400/30 shadow-2xl cursor-pointer hover:scale-105 transition"
+                onClick={() => document.getElementById('category-sports').scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Sports & Fitness</h3>
+                <div className="bg-purple-500/20 rounded-full px-4 py-1 border border-purple-400/30">
+                  <span className="text-purple-200 font-semibold text-sm">11:30 - 11:50</span>
+                </div>
+              </div>
+              {/* AI for Recruitment */}
+              <div
+                className="flex items-center space-x-4 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-teal-400/30 shadow-2xl cursor-pointer hover:scale-105 transition"
+                onClick={() => document.getElementById('category-recruitment').scrollIntoView({ behavior: 'smooth' })}
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">AI for Recruitment</h3>
+                <div className="bg-teal-500/20 rounded-full px-4 py-1 border border-teal-400/30">
+                  <span className="text-teal-200 font-semibold text-sm">11:50 - 12:10</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-lg text-gray-200 font-medium leading-relaxed">
+              Click a category to view its projects and join live meetings!
+            </p>
           </div>
 
-          {/* Enhanced Projects Grid */}
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-10">
-            {projectData.map((project, index) => (
-              <div
-                key={project.id}
-                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-lg border border-white/20 hover:border-purple-400/50 transition-all duration-500 cursor-pointer transform hover:scale-[1.02] hover:-translate-y-2 shadow-2xl hover:shadow-purple-500/20"
-                onClick={() => openModal(project)}
-                style={{
-                  animationDelay: `${index * 100}ms`
-                }}
-              >
-                {/* Live Indicator */}
-                <div className="absolute top-4 right-4 z-20 flex items-center space-x-2 bg-green-500/90 backdrop-blur-sm rounded-full px-3 py-1 border border-green-400/50">
-                  <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
-                  <span className="text-xs font-bold text-white">LIVE</span>
-                </div>
 
-                {/* Image Container */}
-                <div className="relative aspect-w-16 aspect-h-10 overflow-hidden rounded-t-3xl">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
-                  <img
-                    src={project.poster}
-                    alt={project.name}
-                    className="h-[400px] w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                  />
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-end justify-center pb-8">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 border border-white/30">
-                      <span className="text-white font-semibold text-sm">Click to Join Meeting</span>
-                    </div>
+          {/* Categories */}
+          <div className="space-y-16">
+            {/* Healthcare Category */}
+            <div id="category-healthcare" className="category-section">
+              <div className="flex items-center mb-8">
+                <div className="flex items-center space-x-4 bg-gradient-to-r from-red-500/20 to-pink-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-red-400/30 shadow-2xl">
+                  <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15.586 13H14a1 1 0 01-1-1z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Healthcare</h3>
+                  <div className="bg-red-500/20 rounded-full px-4 py-1 border border-red-400/30">
+                    <span className="text-red-200 font-semibold text-sm">10:00 - 10:50</span>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-200 transition-colors duration-300">
-                      {project.name}
-                    </h3>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <p className="text-purple-300 font-semibold text-lg">{project.groupName}</p>
-                    </div>
-                  </div>
-
-                  {/* Interactive Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                    <div className="flex items-center space-x-2">
-                      <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      <span className="text-sm text-gray-300 font-medium">View Details</span>
-                    </div>
-
-                    {/* Meeting Links Indicator */}
-                    <div className="flex items-center space-x-2">
-                      <div className="flex space-x-1">
-                        {project.meetingLinks.map((_, linkIndex) => (
-                          <div
-                            key={linkIndex}
-                            className="w-2.5 h-2.5 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse"
-                            style={{
-                              animationDelay: `${linkIndex * 200}ms`
-                            }}
-                          ></div>
-                        ))}
-                      </div>
-                      <span className="text-xs text-purple-300 font-semibold">
-                        {project.meetingLinks.length} Meeting{project.meetingLinks.length > 1 ? 's' : ''}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/10 group-hover:via-transparent group-hover:to-blue-500/10 transition-all duration-500 pointer-events-none"></div>
               </div>
-            ))}
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                {projectData.filter(project => project.category === "Healthcare").map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+                ))}
+              </div>
+            </div>
+
+            {/* Education Category */}
+            <div id="category-education" className="category-section">
+              <div className="flex items-center mb-8">
+                <div className="flex items-center space-x-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-blue-400/30 shadow-2xl">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Education</h3>
+                  <div className="bg-blue-500/20 rounded-full px-4 py-1 border border-blue-400/30">
+                    <span className="text-blue-200 font-semibold text-sm">10:50 - 11:10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                {projectData.filter(project => project.category === "Education").map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+                ))}
+              </div>
+            </div>
+
+            {/* Agriculture Category */}
+           <div id="category-agriculture" className="category-section">
+              <div className="flex items-center mb-8">
+                <div className="flex items-center space-x-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-green-400/30 shadow-2xl">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Agriculture</h3>
+                  <div className="bg-green-500/20 rounded-full px-4 py-1 border border-green-400/30">
+                    <span className="text-green-200 font-semibold text-sm">11:10 - 11:20</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                {projectData.filter(project => project.category === "Agriculture").map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+                ))}
+              </div>
+            </div>
+
+            {/* Cryptography Category */}
+            <div id="category-cryptography" className="category-section">
+              <div className="flex items-center mb-8">
+                <div className="flex items-center space-x-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-yellow-400/30 shadow-2xl">
+                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Cryptography</h3>
+                  <div className="bg-yellow-500/20 rounded-full px-4 py-1 border border-yellow-400/30">
+                    <span className="text-yellow-200 font-semibold text-sm">11:20 - 11:30</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                {projectData.filter(project => project.category === "Cryptography").map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+                ))}
+              </div>
+            </div>
+
+            {/* Sports & Fitness Category */}
+            <div id="category-sports" className="category-section">
+              <div className="flex items-center mb-8">
+                <div className="flex items-center space-x-4 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-purple-400/30 shadow-2xl">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Sports & Fitness</h3>
+                  <div className="bg-purple-500/20 rounded-full px-4 py-1 border border-purple-400/30">
+                    <span className="text-purple-200 font-semibold text-sm">11:30 - 11:50</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                {projectData.filter(project => project.category === "Sports & Fitness").map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+                ))}
+              </div>
+            </div>
+
+            {/* AI for Recruitment Category */}
+            <div id="category-recruitment" className="category-section">
+              <div className="flex items-center mb-8">
+                <div className="flex items-center space-x-4 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl px-6 py-3 border border-teal-400/30 shadow-2xl">
+                  <div className="w-8 h-8 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">AI for Recruitment</h3>
+                  <div className="bg-teal-500/20 rounded-full px-4 py-1 border border-teal-400/30">
+                    <span className="text-teal-200 font-semibold text-sm">11:50 - 12:10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                {projectData.filter(project => project.category === "AI for Recruitment").map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Call to Action */}
@@ -328,11 +559,6 @@ export default function EventWebsite() {
                 <p className="text-white font-semibold">Oumaima Monsif</p>
                 <p className="text-white font-semibold">HAMMOUDI Salah-eddine</p>
                 <p className="text-white font-semibold">Douha Tissir</p>
-
-
-
-
-
 
 
               </div>

@@ -19,13 +19,9 @@ export const projectData = [
         "time": "from 11:00 AM to 12:00 AM",
         "date": "June 25, 2025"
       },
-      {
-        "title": "Q&A and Demo",
-        "link": "https://meet.google.com/uvw-xyz1-234",
-        "time": "from 12:00 AM to 1:00 PM",
-        "date": "June 25, 2025"
-      }
-    ]
+
+    ],
+    "category": "Healthcare"
   },
   
   {
@@ -53,7 +49,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Education"
   },
   {
     "id": 5,
@@ -80,7 +77,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Education"
   },
   {
     "id": 9,
@@ -107,7 +105,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Sports & Fitness"
   },
   {
     "id": 13,
@@ -134,7 +133,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Healthcare"
   },
   {
     "id": 1,
@@ -161,7 +161,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Healthcare"
   },
   {
     "id": 2,
@@ -244,7 +245,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Healthcare"
   },
   {
     "id": 7,
@@ -271,7 +273,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Cryptography"
   },
   {
     "id": 8,
@@ -298,12 +301,13 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Sports & Fitness"
   },
 
   {
     "id": 10,
-    "name": "Enhancing Accessibility in Digital Healthcare A Multi-Language Medical Chatbot with Voice Synthesis and Dataset-Driven Insights",
+    "name": " Multi-Language Medical Chatbot with Voice Synthesis and Geolocation recommendation",
     "groupName": "AADIL FATIMA, ETTAQY LAILA, ROUCHDI HAFSA",
     "poster": "/posters/AADIL FATIMA_ETTAQY LAILA_ROUCHDI HAFSA.png",
     "abstract": "The integration of conversational artificial intelligence (AI) into modern healthcare infrastructures marks a significant paradigm shift in the dissemination and accessibility of medical information. This project introduces a multilingual medical dialogue system that combines natural language processing (NLP) with multimodal interaction capabilities, textual and vocal to enhance user engagement and promote equitable access to primary health guidance. Developed using the Streamlit framework, the proposed system harnesses the power of advanced transformer-based architectures, notably BART (Bidirectional and Auto-Regressive Transformers), to perform zero-shot symptom classification. It enables accurate interpretation of free-text symptom descriptions and delivers context-aware responses in seven languages, including English, French, Arabic, Spanish, Italian, German and Portuguese. This linguistic versatility is further augmented by integrated automatic language detection, speech-to-text recognition, and text-to-speech synthesis, thereby ensuring seamless interaction for users with visual impairments or limited literacy. The model is trained on expert-labeled data including symptoms, demographics, and conditions to generate personalized diagnostic suggestions. A key feature is its geolocation-based engine, which recommends nearby healthcare services with practical details, like names, adresses, contact details and estimated distances, making support both personalized and location-specific. This research highlights how multilingual conversational AI can help overcome language, accessibility, and diagnostic challenges, showing its potential to improve early symptom screening, promote health literacy, and make healthcare more inclusive and globally accessible.",
@@ -326,7 +330,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+     "category": "Healthcare"
   },
   {
     "id": 14,
@@ -353,7 +358,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "Agriculture"
   },
   {
     "id": 11,
@@ -380,11 +386,12 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+    "category": "AI for Recruitment"
   },
   {
     "id": 12,
-    "name": "SmartRoute: Multi-Agent System for Pathfinding Using A*",
+    "name": "AI-Powered Workflow for Automated CV Screening and Candidate Scoring",
     "groupName": "BESSIOUA Redouane, SORO Ferelaha",
     "poster": "/posters/bessioua_soro.png",
     "abstract": "We present an AI-powered recruitment workflow that automates the candidate selection process by leveraging Large Language Models (LLMs) like GPT and workflow automation tools such as n8n. The system intelligently parses incoming job applications, analyzes candidate CVs, and matches them against job requirements to compute a relevance score. This streamlined pipeline enables efficient filtering of suitable profiles, reducing manual effort and improving the accuracy of talent acquisition.",
@@ -407,7 +414,8 @@ export const projectData = [
         "time": "from 12:00 AM to 1:00 PM",
         "date": "June 25, 2025"
       }
-    ]
+    ],
+     "category": "AI for Recruitment"
   },
   
 ]
